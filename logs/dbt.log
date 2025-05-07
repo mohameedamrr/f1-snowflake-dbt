@@ -1,0 +1,1188 @@
+[0m00:36:43.712022 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002083C1C8B80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002083E0090F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002083E008F10>]}
+
+
+============================== 00:36:43.716020 | 32aabcda-9b10-4ca0-83db-a646a3ec933c ==============================
+[0m00:36:43.716020 [info ] [MainThread]: Running with dbt=1.9.4
+[0m00:36:43.717025 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'D:\\Personal WorkSpace\\Data Engineering\\Projects\\f1-snowflake-project\\f1_snowflake_project\\logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\mdamr\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m00:36:43.734022 [info ] [MainThread]: dbt version: 1.9.4
+[0m00:36:43.735024 [info ] [MainThread]: python version: 3.10.11
+[0m00:36:43.736025 [info ] [MainThread]: python path: D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\dbt_env\Scripts\python.exe
+[0m00:36:43.737025 [info ] [MainThread]: os info: Windows-10-10.0.22631-SP0
+[0m00:36:44.078682 [info ] [MainThread]: Using profiles dir at C:\Users\mdamr\.dbt
+[0m00:36:44.078682 [info ] [MainThread]: Using profiles.yml file at C:\Users\mdamr\.dbt\profiles.yml
+[0m00:36:44.079679 [info ] [MainThread]: Using dbt_project.yml file at D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\dbt_project.yml
+[0m00:36:44.081116 [info ] [MainThread]: adapter type: snowflake
+[0m00:36:44.081116 [info ] [MainThread]: adapter version: 1.9.4
+[0m00:36:44.219152 [info ] [MainThread]: Configuration:
+[0m00:36:44.220151 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m00:36:44.221156 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m00:36:44.222152 [info ] [MainThread]: Required dependencies:
+[0m00:36:44.222152 [debug] [MainThread]: Executing "git --help"
+[0m00:36:44.263452 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--super-prefix=<path>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m00:36:44.264452 [debug] [MainThread]: STDERR: "b''"
+[0m00:36:44.264452 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m00:36:44.265453 [info ] [MainThread]: Connection:
+[0m00:36:44.266452 [info ] [MainThread]:   account: zs22135.eu-central-1
+[0m00:36:44.266452 [info ] [MainThread]:   user: dbt_user
+[0m00:36:44.267453 [info ] [MainThread]:   database: f1_db
+[0m00:36:44.267453 [info ] [MainThread]:   warehouse: finance_wh
+[0m00:36:44.268455 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m00:36:44.269453 [info ] [MainThread]:   schema: raw
+[0m00:36:44.270452 [info ] [MainThread]:   authenticator: None
+[0m00:36:44.271458 [info ] [MainThread]:   oauth_client_id: None
+[0m00:36:44.271458 [info ] [MainThread]:   query_tag: None
+[0m00:36:44.272458 [info ] [MainThread]:   client_session_keep_alive: False
+[0m00:36:44.272458 [info ] [MainThread]:   host: None
+[0m00:36:44.273460 [info ] [MainThread]:   port: None
+[0m00:36:44.273460 [info ] [MainThread]:   proxy_host: None
+[0m00:36:44.274462 [info ] [MainThread]:   proxy_port: None
+[0m00:36:44.275458 [info ] [MainThread]:   protocol: None
+[0m00:36:44.276461 [info ] [MainThread]:   connect_retries: 1
+[0m00:36:44.277460 [info ] [MainThread]:   connect_timeout: None
+[0m00:36:44.277460 [info ] [MainThread]:   retry_on_database_errors: False
+[0m00:36:44.278459 [info ] [MainThread]:   retry_all: False
+[0m00:36:44.279460 [info ] [MainThread]:   insecure_mode: False
+[0m00:36:44.279460 [info ] [MainThread]:   reuse_connections: True
+[0m00:36:44.281460 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m00:36:44.595942 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m00:36:44.658347 [debug] [MainThread]: Using snowflake connection "debug"
+[0m00:36:44.658347 [debug] [MainThread]: On debug: select 1 as id
+[0m00:36:44.659348 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:36:45.797316 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.138 seconds
+[0m00:36:45.799320 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m00:36:45.800311 [info ] [MainThread]: [32mAll checks passed![0m
+[0m00:36:45.802315 [debug] [MainThread]: Command `dbt debug` succeeded at 00:36:45.802315 after 2.16 seconds
+[0m00:36:45.803316 [debug] [MainThread]: Connection 'debug' was left open.
+[0m00:36:45.803316 [debug] [MainThread]: On debug: Close
+[0m00:36:46.053125 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002083C1C8B80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002083EB42860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002083E47F3D0>]}
+[0m00:36:46.055127 [debug] [MainThread]: Flushing usage events
+[0m00:36:47.139578 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m02:01:46.570353 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AAAC9B4BE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AAAE7FD270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AAAE7FD090>]}
+
+
+============================== 02:01:46.574871 | 8af8f659-17b8-492a-8d2b-6d82ad9c3f64 ==============================
+[0m02:01:46.574871 [info ] [MainThread]: Running with dbt=1.9.4
+[0m02:01:46.575871 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'D:\\Personal WorkSpace\\Data Engineering\\Projects\\f1-snowflake-project\\f1_snowflake_project\\logs', 'profiles_dir': 'C:\\Users\\mdamr\\.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m02:01:47.621703 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8af8f659-17b8-492a-8d2b-6d82ad9c3f64', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AAAE810070>]}
+[0m02:01:47.676306 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8af8f659-17b8-492a-8d2b-6d82ad9c3f64', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AACF196440>]}
+[0m02:01:47.677307 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m02:01:48.043210 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m02:01:48.044211 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m02:01:48.045716 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '8af8f659-17b8-492a-8d2b-6d82ad9c3f64', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AACF22A650>]}
+[0m02:01:50.095025 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.f1_snowflake_project.stg_laps' (models\example\staging\stg_laps.sql) depends on a source named 'raw.laps' which was not found
+[0m02:01:50.097025 [debug] [MainThread]: Command `dbt run` failed at 02:01:50.096025 after 3.61 seconds
+[0m02:01:50.097025 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AAAC9B4BE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AACF875210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002AACF875C60>]}
+[0m02:01:50.098023 [debug] [MainThread]: Flushing usage events
+[0m02:01:50.906694 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m02:03:11.433785 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D02634B80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D035AD210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D035AD030>]}
+
+
+============================== 02:03:11.437784 | a3e9b64b-4b84-4c2c-8770-0fb4cde3e604 ==============================
+[0m02:03:11.437784 [info ] [MainThread]: Running with dbt=1.9.4
+[0m02:03:11.438787 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\mdamr\\.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'D:\\Personal WorkSpace\\Data Engineering\\Projects\\f1-snowflake-project\\f1_snowflake_project\\logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m02:03:12.368095 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a3e9b64b-4b84-4c2c-8770-0fb4cde3e604', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D23FBA500>]}
+[0m02:03:12.421235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a3e9b64b-4b84-4c2c-8770-0fb4cde3e604', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D23F463E0>]}
+[0m02:03:12.423751 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m02:03:12.797490 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m02:03:12.798492 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m02:03:12.798492 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'a3e9b64b-4b84-4c2c-8770-0fb4cde3e604', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D23F1BB80>]}
+[0m02:03:14.091899 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.f1_snowflake_project.marts
+- models.f1_snowflake_project.staging
+[0m02:03:14.104408 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a3e9b64b-4b84-4c2c-8770-0fb4cde3e604', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D247F2770>]}
+[0m02:03:14.275447 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\manifest.json
+[0m02:03:14.278952 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\semantic_manifest.json
+[0m02:03:14.301242 [error] [MainThread]: Encountered an error:
+Found a cycle: model.f1_snowflake_project.fct_lapData
+[0m02:03:14.303236 [error] [MainThread]: Traceback (most recent call last):
+  File "D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\dbt_env\lib\site-packages\dbt\cli\requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+  File "D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\dbt_env\lib\site-packages\dbt\cli\requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\dbt_env\lib\site-packages\dbt\cli\requires.py", line 235, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\dbt_env\lib\site-packages\dbt\cli\requires.py", line 264, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\dbt_env\lib\site-packages\dbt\cli\requires.py", line 311, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\dbt_env\lib\site-packages\dbt\cli\requires.py", line 328, in wrapper
+    return func(*args, **kwargs)
+  File "D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\dbt_env\lib\site-packages\dbt\cli\main.py", line 578, in run
+    results = task.run()
+  File "D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\dbt_env\lib\site-packages\dbt\task\runnable.py", line 574, in run
+    self._runtime_initialize()
+  File "D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\dbt_env\lib\site-packages\dbt\task\compile.py", line 133, in _runtime_initialize
+    super()._runtime_initialize()
+  File "D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\dbt_env\lib\site-packages\dbt\task\runnable.py", line 170, in _runtime_initialize
+    self.compile_manifest()
+  File "D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\dbt_env\lib\site-packages\dbt\task\base.py", line 134, in compile_manifest
+    self.graph = self.compiler.compile(self.manifest)
+  File "D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\dbt_env\lib\site-packages\dbt\compilation.py", line 475, in compile
+    linker.link_graph(manifest)
+  File "D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\dbt_env\lib\site-packages\dbt\compilation.py", line 195, in link_graph
+    raise RuntimeError("Found a cycle: {}".format(cycle))
+RuntimeError: Found a cycle: model.f1_snowflake_project.fct_lapData
+
+[0m02:03:14.305239 [debug] [MainThread]: Command `dbt run` failed at 02:03:14.305239 after 2.94 seconds
+[0m02:03:14.305239 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D02634B80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D24783DC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022D24781F30>]}
+[0m02:03:14.306239 [debug] [MainThread]: Flushing usage events
+[0m02:03:15.261723 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m02:04:57.704667 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002577B6F4B80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002577D53D210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002577D53D030>]}
+
+
+============================== 02:04:57.708668 | fc115b45-0a57-4f4f-bbb8-48598804d579 ==============================
+[0m02:04:57.708668 [info ] [MainThread]: Running with dbt=1.9.4
+[0m02:04:57.709668 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'D:\\Personal WorkSpace\\Data Engineering\\Projects\\f1-snowflake-project\\f1_snowflake_project\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\mdamr\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m02:04:58.525667 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fc115b45-0a57-4f4f-bbb8-48598804d579', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002571DF5E500>]}
+[0m02:04:58.575664 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fc115b45-0a57-4f4f-bbb8-48598804d579', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002571DEE63E0>]}
+[0m02:04:58.577507 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m02:04:58.922605 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m02:04:59.109194 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m02:04:59.110193 [debug] [MainThread]: Partial parsing: updated file: f1_snowflake_project://models\example\marts\fct_lapData.sql
+[0m02:04:59.390411 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.f1_snowflake_project.staging
+- models.f1_snowflake_project.marts
+[0m02:04:59.405415 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fc115b45-0a57-4f4f-bbb8-48598804d579', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002571E59CF70>]}
+[0m02:04:59.499929 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\manifest.json
+[0m02:04:59.503937 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\semantic_manifest.json
+[0m02:04:59.524360 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fc115b45-0a57-4f4f-bbb8-48598804d579', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002571E59F5E0>]}
+[0m02:04:59.525361 [info ] [MainThread]: Found 4 models, 4 data tests, 1 source, 476 macros
+[0m02:04:59.526360 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fc115b45-0a57-4f4f-bbb8-48598804d579', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002571E59F610>]}
+[0m02:04:59.527360 [info ] [MainThread]: 
+[0m02:04:59.528363 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m02:04:59.528363 [info ] [MainThread]: 
+[0m02:04:59.529359 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m02:04:59.535363 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_f1_db'
+[0m02:04:59.619479 [debug] [ThreadPool]: Using snowflake connection "list_f1_db"
+[0m02:04:59.620479 [debug] [ThreadPool]: On list_f1_db: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db"} */
+show terse schemas in database f1_db
+    limit 10000
+[0m02:04:59.620479 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:05:00.995298 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.374 seconds
+[0m02:05:00.999290 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_f1_db_raw'
+[0m02:05:01.013299 [debug] [ThreadPool]: Using snowflake connection "list_f1_db_raw"
+[0m02:05:01.014299 [debug] [ThreadPool]: On list_f1_db_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db_raw"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m02:05:01.014299 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:05:01.895098 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.881 seconds
+[0m02:05:01.901097 [debug] [ThreadPool]: Using snowflake connection "list_f1_db_raw"
+[0m02:05:01.902106 [debug] [ThreadPool]: On list_f1_db_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db_raw"} */
+show objects in f1_db.raw
+    limit 10000
+    
+;
+[0m02:05:02.157385 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.255 seconds
+[0m02:05:02.160385 [debug] [ThreadPool]: Using snowflake connection "list_f1_db_raw"
+[0m02:05:02.161385 [debug] [ThreadPool]: On list_f1_db_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db_raw"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m02:05:02.309334 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.147 seconds
+[0m02:05:02.312334 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fc115b45-0a57-4f4f-bbb8-48598804d579', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025779876CE0>]}
+[0m02:05:02.325527 [debug] [Thread-1 (]: Began running node model.f1_snowflake_project.my_first_dbt_model
+[0m02:05:02.326531 [debug] [Thread-2 (]: Began running node model.f1_snowflake_project.stg_laps
+[0m02:05:02.327526 [info ] [Thread-1 (]: 1 of 4 START sql table model raw.my_first_dbt_model ............................ [RUN]
+[0m02:05:02.328527 [info ] [Thread-2 (]: 2 of 4 START sql view model raw.stg_laps ....................................... [RUN]
+[0m02:05:02.329528 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.f1_snowflake_project.my_first_dbt_model'
+[0m02:05:02.330528 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.f1_snowflake_project.stg_laps'
+[0m02:05:02.330528 [debug] [Thread-1 (]: Began compiling node model.f1_snowflake_project.my_first_dbt_model
+[0m02:05:02.331528 [debug] [Thread-2 (]: Began compiling node model.f1_snowflake_project.stg_laps
+[0m02:05:02.339528 [debug] [Thread-1 (]: Writing injected SQL for node "model.f1_snowflake_project.my_first_dbt_model"
+[0m02:05:02.342526 [debug] [Thread-2 (]: Writing injected SQL for node "model.f1_snowflake_project.stg_laps"
+[0m02:05:02.344525 [debug] [Thread-1 (]: Began executing node model.f1_snowflake_project.my_first_dbt_model
+[0m02:05:02.355526 [debug] [Thread-2 (]: Began executing node model.f1_snowflake_project.stg_laps
+[0m02:05:02.378529 [debug] [Thread-1 (]: Writing runtime sql for node "model.f1_snowflake_project.my_first_dbt_model"
+[0m02:05:02.396526 [debug] [Thread-2 (]: Writing runtime sql for node "model.f1_snowflake_project.stg_laps"
+[0m02:05:02.398525 [debug] [Thread-1 (]: Using snowflake connection "model.f1_snowflake_project.my_first_dbt_model"
+[0m02:05:02.399525 [debug] [Thread-2 (]: Using snowflake connection "model.f1_snowflake_project.stg_laps"
+[0m02:05:02.399525 [debug] [Thread-1 (]: On model.f1_snowflake_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.my_first_dbt_model"} */
+create or replace transient table f1_db.raw.my_first_dbt_model
+    
+
+    
+    as (/*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    )
+;
+[0m02:05:02.400524 [debug] [Thread-2 (]: On model.f1_snowflake_project.stg_laps: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.stg_laps"} */
+create or replace   view f1_db.raw.stg_laps
+  
+   as (
+    SELECT driver,
+try_to_time(laptime) as laptime,
+lapnumber,
+team,
+position,
+FROM f1_db.raw.laps
+  );
+[0m02:05:02.400524 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m02:05:02.401527 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m02:05:03.246102 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.845 seconds
+[0m02:05:03.270097 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fc115b45-0a57-4f4f-bbb8-48598804d579', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002577981E4A0>]}
+[0m02:05:03.271101 [info ] [Thread-2 (]: 2 of 4 OK created sql view model raw.stg_laps .................................. [[32mSUCCESS 1[0m in 0.94s]
+[0m02:05:03.272098 [debug] [Thread-2 (]: Finished running node model.f1_snowflake_project.stg_laps
+[0m02:05:03.273101 [debug] [Thread-4 (]: Began running node model.f1_snowflake_project.fct_lapData
+[0m02:05:03.274105 [info ] [Thread-4 (]: 3 of 4 START sql view model raw.fct_lapData .................................... [RUN]
+[0m02:05:03.274105 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.f1_snowflake_project.fct_lapData'
+[0m02:05:03.275104 [debug] [Thread-4 (]: Began compiling node model.f1_snowflake_project.fct_lapData
+[0m02:05:03.278097 [debug] [Thread-4 (]: Writing injected SQL for node "model.f1_snowflake_project.fct_lapData"
+[0m02:05:03.285053 [debug] [Thread-4 (]: Began executing node model.f1_snowflake_project.fct_lapData
+[0m02:05:03.289075 [debug] [Thread-4 (]: Writing runtime sql for node "model.f1_snowflake_project.fct_lapData"
+[0m02:05:03.290074 [debug] [Thread-4 (]: Using snowflake connection "model.f1_snowflake_project.fct_lapData"
+[0m02:05:03.291075 [debug] [Thread-4 (]: On model.f1_snowflake_project.fct_lapData: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.fct_lapData"} */
+create or replace   view f1_db.raw.fct_lapData
+  
+   as (
+    SELECT
+driver,
+COUNT(*) AS number_of_laps,
+AVG(laptime) AS average_laptime,
+AVG(position) AS average_position
+min(laptime) as best_lap
+team
+FROM f1_db.raw.stg_laps
+GROUP BY driver
+  );
+[0m02:05:03.291075 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m02:05:03.991109 [debug] [Thread-4 (]: Snowflake adapter: Snowflake query id: 01bc32c9-0304-7caa-0003-67f20003225a
+[0m02:05:03.992107 [debug] [Thread-4 (]: Snowflake adapter: Snowflake error: 001003 (42000): SQL compilation error:
+syntax error line 9 at position 0 unexpected 'min'.
+[0m02:05:04.002107 [debug] [Thread-4 (]: Database Error in model fct_lapData (models\example\marts\fct_lapData.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 9 at position 0 unexpected 'min'.
+  compiled code at target\run\f1_snowflake_project\models\example\marts\fct_lapData.sql
+[0m02:05:04.003108 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fc115b45-0a57-4f4f-bbb8-48598804d579', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002571FCF0340>]}
+[0m02:05:04.004113 [error] [Thread-4 (]: 3 of 4 ERROR creating sql view model raw.fct_lapData ........................... [[31mERROR[0m in 0.73s]
+[0m02:05:04.005112 [debug] [Thread-4 (]: Finished running node model.f1_snowflake_project.fct_lapData
+[0m02:05:04.006113 [debug] [Thread-7 (]: Marking all children of 'model.f1_snowflake_project.fct_lapData' to be skipped because of status 'error'.  Reason: Database Error in model fct_lapData (models\example\marts\fct_lapData.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 9 at position 0 unexpected 'min'.
+  compiled code at target\run\f1_snowflake_project\models\example\marts\fct_lapData.sql.
+[0m02:05:04.784598 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 2.383 seconds
+[0m02:05:04.787598 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fc115b45-0a57-4f4f-bbb8-48598804d579', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002571FC90910>]}
+[0m02:05:04.788598 [info ] [Thread-1 (]: 1 of 4 OK created sql table model raw.my_first_dbt_model ....................... [[32mSUCCESS 1[0m in 2.46s]
+[0m02:05:04.790600 [debug] [Thread-1 (]: Finished running node model.f1_snowflake_project.my_first_dbt_model
+[0m02:05:04.791597 [debug] [Thread-2 (]: Began running node model.f1_snowflake_project.my_second_dbt_model
+[0m02:05:04.792596 [info ] [Thread-2 (]: 4 of 4 START sql view model raw.my_second_dbt_model ............................ [RUN]
+[0m02:05:04.793596 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.f1_snowflake_project.stg_laps, now model.f1_snowflake_project.my_second_dbt_model)
+[0m02:05:04.794604 [debug] [Thread-2 (]: Began compiling node model.f1_snowflake_project.my_second_dbt_model
+[0m02:05:04.798598 [debug] [Thread-2 (]: Writing injected SQL for node "model.f1_snowflake_project.my_second_dbt_model"
+[0m02:05:04.806148 [debug] [Thread-2 (]: Began executing node model.f1_snowflake_project.my_second_dbt_model
+[0m02:05:04.811144 [debug] [Thread-2 (]: Writing runtime sql for node "model.f1_snowflake_project.my_second_dbt_model"
+[0m02:05:04.813145 [debug] [Thread-2 (]: Using snowflake connection "model.f1_snowflake_project.my_second_dbt_model"
+[0m02:05:04.813145 [debug] [Thread-2 (]: On model.f1_snowflake_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.my_second_dbt_model"} */
+create or replace   view f1_db.raw.my_second_dbt_model
+  
+   as (
+    -- Use the `ref` function to select from other models
+
+select *
+from f1_db.raw.my_first_dbt_model
+where id = 1
+  );
+[0m02:05:05.070136 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.256 seconds
+[0m02:05:05.074135 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fc115b45-0a57-4f4f-bbb8-48598804d579', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002571FC90910>]}
+[0m02:05:05.075131 [info ] [Thread-2 (]: 4 of 4 OK created sql view model raw.my_second_dbt_model ....................... [[32mSUCCESS 1[0m in 0.28s]
+[0m02:05:05.077137 [debug] [Thread-2 (]: Finished running node model.f1_snowflake_project.my_second_dbt_model
+[0m02:05:05.079129 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:05:05.079129 [debug] [MainThread]: Connection 'list_f1_db' was left open.
+[0m02:05:05.080129 [debug] [MainThread]: On list_f1_db: Close
+[0m02:05:05.310206 [debug] [MainThread]: Connection 'list_f1_db_raw' was left open.
+[0m02:05:05.311208 [debug] [MainThread]: On list_f1_db_raw: Close
+[0m02:05:05.610569 [debug] [MainThread]: Connection 'model.f1_snowflake_project.my_first_dbt_model' was left open.
+[0m02:05:05.610569 [debug] [MainThread]: On model.f1_snowflake_project.my_first_dbt_model: Close
+[0m02:05:06.138968 [debug] [MainThread]: Connection 'model.f1_snowflake_project.my_second_dbt_model' was left open.
+[0m02:05:06.139968 [debug] [MainThread]: On model.f1_snowflake_project.my_second_dbt_model: Close
+[0m02:05:06.421039 [debug] [MainThread]: Connection 'model.f1_snowflake_project.fct_lapData' was left open.
+[0m02:05:06.422048 [debug] [MainThread]: On model.f1_snowflake_project.fct_lapData: Close
+[0m02:05:06.729527 [info ] [MainThread]: 
+[0m02:05:06.731532 [info ] [MainThread]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 7.20 seconds (7.20s).
+[0m02:05:06.733532 [debug] [MainThread]: Command end result
+[0m02:05:06.766525 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\manifest.json
+[0m02:05:06.770528 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\semantic_manifest.json
+[0m02:05:06.781529 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\run_results.json
+[0m02:05:06.782527 [info ] [MainThread]: 
+[0m02:05:06.786529 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m02:05:06.786529 [info ] [MainThread]: 
+[0m02:05:06.787529 [error] [MainThread]:   Database Error in model fct_lapData (models\example\marts\fct_lapData.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 9 at position 0 unexpected 'min'.
+  compiled code at target\run\f1_snowflake_project\models\example\marts\fct_lapData.sql
+[0m02:05:06.788529 [info ] [MainThread]: 
+[0m02:05:06.793528 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=1 SKIP=0 TOTAL=4
+[0m02:05:06.795529 [debug] [MainThread]: Command `dbt run` failed at 02:05:06.794528 after 9.15 seconds
+[0m02:05:06.795529 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002577B6F4B80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002577C76A830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002571E4AD720>]}
+[0m02:05:06.796529 [debug] [MainThread]: Flushing usage events
+[0m02:05:07.674180 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m02:05:20.842740 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019E7A2C4C40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019E7B16D2A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019E7B16D0C0>]}
+
+
+============================== 02:05:20.845742 | 3e39b4c9-f17f-41a4-b97b-4c1f6ebe2415 ==============================
+[0m02:05:20.845742 [info ] [MainThread]: Running with dbt=1.9.4
+[0m02:05:20.846740 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\mdamr\\.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'D:\\Personal WorkSpace\\Data Engineering\\Projects\\f1-snowflake-project\\f1_snowflake_project\\logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m02:05:21.631451 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3e39b4c9-f17f-41a4-b97b-4c1f6ebe2415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019E776256C0>]}
+[0m02:05:21.680452 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3e39b4c9-f17f-41a4-b97b-4c1f6ebe2415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019E1BAE4370>]}
+[0m02:05:21.682453 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m02:05:22.041764 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m02:05:22.239666 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m02:05:22.239666 [debug] [MainThread]: Partial parsing: updated file: f1_snowflake_project://models\example\marts\fct_lapData.sql
+[0m02:05:22.523706 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.f1_snowflake_project.marts
+- models.f1_snowflake_project.staging
+[0m02:05:22.536217 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3e39b4c9-f17f-41a4-b97b-4c1f6ebe2415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019E1C19D030>]}
+[0m02:05:22.631738 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\manifest.json
+[0m02:05:22.635739 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\semantic_manifest.json
+[0m02:05:22.657131 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3e39b4c9-f17f-41a4-b97b-4c1f6ebe2415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019E1C19FFA0>]}
+[0m02:05:22.657131 [info ] [MainThread]: Found 4 models, 4 data tests, 1 source, 476 macros
+[0m02:05:22.658130 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3e39b4c9-f17f-41a4-b97b-4c1f6ebe2415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019E1C0FD7B0>]}
+[0m02:05:22.659130 [info ] [MainThread]: 
+[0m02:05:22.660130 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m02:05:22.660130 [info ] [MainThread]: 
+[0m02:05:22.661130 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m02:05:22.668131 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_f1_db'
+[0m02:05:22.741652 [debug] [ThreadPool]: Using snowflake connection "list_f1_db"
+[0m02:05:22.742653 [debug] [ThreadPool]: On list_f1_db: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db"} */
+show terse schemas in database f1_db
+    limit 10000
+[0m02:05:22.742653 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:05:24.005371 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.262 seconds
+[0m02:05:24.012369 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_f1_db_raw'
+[0m02:05:24.027380 [debug] [ThreadPool]: Using snowflake connection "list_f1_db_raw"
+[0m02:05:24.027380 [debug] [ThreadPool]: On list_f1_db_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db_raw"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m02:05:24.028380 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:05:24.678422 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.650 seconds
+[0m02:05:24.684425 [debug] [ThreadPool]: Using snowflake connection "list_f1_db_raw"
+[0m02:05:24.684425 [debug] [ThreadPool]: On list_f1_db_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db_raw"} */
+show objects in f1_db.raw
+    limit 10000
+    
+;
+[0m02:05:25.159840 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.475 seconds
+[0m02:05:25.163839 [debug] [ThreadPool]: Using snowflake connection "list_f1_db_raw"
+[0m02:05:25.165841 [debug] [ThreadPool]: On list_f1_db_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db_raw"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m02:05:25.476375 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.310 seconds
+[0m02:05:25.480380 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3e39b4c9-f17f-41a4-b97b-4c1f6ebe2415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019E77462AA0>]}
+[0m02:05:25.487375 [debug] [Thread-1 (]: Began running node model.f1_snowflake_project.my_first_dbt_model
+[0m02:05:25.487375 [debug] [Thread-2 (]: Began running node model.f1_snowflake_project.stg_laps
+[0m02:05:25.488375 [info ] [Thread-1 (]: 1 of 4 START sql table model raw.my_first_dbt_model ............................ [RUN]
+[0m02:05:25.490373 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.f1_snowflake_project.my_first_dbt_model'
+[0m02:05:25.489372 [info ] [Thread-2 (]: 2 of 4 START sql view model raw.stg_laps ....................................... [RUN]
+[0m02:05:25.491373 [debug] [Thread-1 (]: Began compiling node model.f1_snowflake_project.my_first_dbt_model
+[0m02:05:25.491373 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.f1_snowflake_project.stg_laps'
+[0m02:05:25.498373 [debug] [Thread-1 (]: Writing injected SQL for node "model.f1_snowflake_project.my_first_dbt_model"
+[0m02:05:25.499375 [debug] [Thread-2 (]: Began compiling node model.f1_snowflake_project.stg_laps
+[0m02:05:25.502371 [debug] [Thread-2 (]: Writing injected SQL for node "model.f1_snowflake_project.stg_laps"
+[0m02:05:25.503373 [debug] [Thread-2 (]: Began executing node model.f1_snowflake_project.stg_laps
+[0m02:05:25.537901 [debug] [Thread-1 (]: Began executing node model.f1_snowflake_project.my_first_dbt_model
+[0m02:05:25.553901 [debug] [Thread-2 (]: Writing runtime sql for node "model.f1_snowflake_project.stg_laps"
+[0m02:05:25.567901 [debug] [Thread-1 (]: Writing runtime sql for node "model.f1_snowflake_project.my_first_dbt_model"
+[0m02:05:25.570903 [debug] [Thread-1 (]: Using snowflake connection "model.f1_snowflake_project.my_first_dbt_model"
+[0m02:05:25.571903 [debug] [Thread-1 (]: On model.f1_snowflake_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.my_first_dbt_model"} */
+create or replace transient table f1_db.raw.my_first_dbt_model
+    
+
+    
+    as (/*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    )
+;
+[0m02:05:25.572903 [debug] [Thread-2 (]: Using snowflake connection "model.f1_snowflake_project.stg_laps"
+[0m02:05:25.573902 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m02:05:25.574903 [debug] [Thread-2 (]: On model.f1_snowflake_project.stg_laps: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.stg_laps"} */
+create or replace   view f1_db.raw.stg_laps
+  
+   as (
+    SELECT driver,
+try_to_time(laptime) as laptime,
+lapnumber,
+team,
+position,
+FROM f1_db.raw.laps
+  );
+[0m02:05:25.577902 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m02:05:26.295100 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.717 seconds
+[0m02:05:26.321107 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3e39b4c9-f17f-41a4-b97b-4c1f6ebe2415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019E7741E560>]}
+[0m02:05:26.322107 [info ] [Thread-2 (]: 2 of 4 OK created sql view model raw.stg_laps .................................. [[32mSUCCESS 1[0m in 0.83s]
+[0m02:05:26.323102 [debug] [Thread-2 (]: Finished running node model.f1_snowflake_project.stg_laps
+[0m02:05:26.324103 [debug] [Thread-4 (]: Began running node model.f1_snowflake_project.fct_lapData
+[0m02:05:26.325106 [info ] [Thread-4 (]: 3 of 4 START sql view model raw.fct_lapData .................................... [RUN]
+[0m02:05:26.325106 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.f1_snowflake_project.fct_lapData'
+[0m02:05:26.326103 [debug] [Thread-4 (]: Began compiling node model.f1_snowflake_project.fct_lapData
+[0m02:05:26.329102 [debug] [Thread-4 (]: Writing injected SQL for node "model.f1_snowflake_project.fct_lapData"
+[0m02:05:26.330608 [debug] [Thread-4 (]: Began executing node model.f1_snowflake_project.fct_lapData
+[0m02:05:26.333617 [debug] [Thread-4 (]: Writing runtime sql for node "model.f1_snowflake_project.fct_lapData"
+[0m02:05:26.335617 [debug] [Thread-4 (]: Using snowflake connection "model.f1_snowflake_project.fct_lapData"
+[0m02:05:26.335617 [debug] [Thread-4 (]: On model.f1_snowflake_project.fct_lapData: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.fct_lapData"} */
+create or replace   view f1_db.raw.fct_lapData
+  
+   as (
+    SELECT
+driver,
+COUNT(*) AS number_of_laps,
+AVG(laptime) AS average_laptime,
+AVG(position) AS average_position,
+MIN(laptime) as best_lap
+team
+FROM f1_db.raw.stg_laps
+GROUP BY driver
+  );
+[0m02:05:26.336617 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m02:05:26.709172 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.136 seconds
+[0m02:05:26.713171 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3e39b4c9-f17f-41a4-b97b-4c1f6ebe2415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019E1D8B4160>]}
+[0m02:05:26.714174 [info ] [Thread-1 (]: 1 of 4 OK created sql table model raw.my_first_dbt_model ....................... [[32mSUCCESS 1[0m in 1.22s]
+[0m02:05:26.716184 [debug] [Thread-1 (]: Finished running node model.f1_snowflake_project.my_first_dbt_model
+[0m02:05:26.717184 [debug] [Thread-2 (]: Began running node model.f1_snowflake_project.my_second_dbt_model
+[0m02:05:26.718184 [info ] [Thread-2 (]: 4 of 4 START sql view model raw.my_second_dbt_model ............................ [RUN]
+[0m02:05:26.719183 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.f1_snowflake_project.stg_laps, now model.f1_snowflake_project.my_second_dbt_model)
+[0m02:05:26.719183 [debug] [Thread-2 (]: Began compiling node model.f1_snowflake_project.my_second_dbt_model
+[0m02:05:26.722183 [debug] [Thread-2 (]: Writing injected SQL for node "model.f1_snowflake_project.my_second_dbt_model"
+[0m02:05:26.723182 [debug] [Thread-2 (]: Began executing node model.f1_snowflake_project.my_second_dbt_model
+[0m02:05:26.728182 [debug] [Thread-2 (]: Writing runtime sql for node "model.f1_snowflake_project.my_second_dbt_model"
+[0m02:05:26.729183 [debug] [Thread-2 (]: Using snowflake connection "model.f1_snowflake_project.my_second_dbt_model"
+[0m02:05:26.732700 [debug] [Thread-2 (]: On model.f1_snowflake_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.my_second_dbt_model"} */
+create or replace   view f1_db.raw.my_second_dbt_model
+  
+   as (
+    -- Use the `ref` function to select from other models
+
+select *
+from f1_db.raw.my_first_dbt_model
+where id = 1
+  );
+[0m02:05:26.832161 [debug] [Thread-4 (]: Snowflake adapter: Snowflake query id: 01bc32c9-0304-7b36-0003-67f20003027a
+[0m02:05:26.833164 [debug] [Thread-4 (]: Snowflake adapter: Snowflake error: 001003 (42000): SQL compilation error:
+syntax error line 10 at position 0 unexpected 'team'.
+[0m02:05:26.838160 [debug] [Thread-4 (]: Database Error in model fct_lapData (models\example\marts\fct_lapData.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 10 at position 0 unexpected 'team'.
+  compiled code at target\run\f1_snowflake_project\models\example\marts\fct_lapData.sql
+[0m02:05:26.839159 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3e39b4c9-f17f-41a4-b97b-4c1f6ebe2415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019E1D953070>]}
+[0m02:05:26.840158 [error] [Thread-4 (]: 3 of 4 ERROR creating sql view model raw.fct_lapData ........................... [[31mERROR[0m in 0.51s]
+[0m02:05:26.841159 [debug] [Thread-4 (]: Finished running node model.f1_snowflake_project.fct_lapData
+[0m02:05:26.842158 [debug] [Thread-7 (]: Marking all children of 'model.f1_snowflake_project.fct_lapData' to be skipped because of status 'error'.  Reason: Database Error in model fct_lapData (models\example\marts\fct_lapData.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 10 at position 0 unexpected 'team'.
+  compiled code at target\run\f1_snowflake_project\models\example\marts\fct_lapData.sql.
+[0m02:05:27.012534 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.278 seconds
+[0m02:05:27.016544 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3e39b4c9-f17f-41a4-b97b-4c1f6ebe2415', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019E1D84B940>]}
+[0m02:05:27.017539 [info ] [Thread-2 (]: 4 of 4 OK created sql view model raw.my_second_dbt_model ....................... [[32mSUCCESS 1[0m in 0.30s]
+[0m02:05:27.018538 [debug] [Thread-2 (]: Finished running node model.f1_snowflake_project.my_second_dbt_model
+[0m02:05:27.020537 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:05:27.020537 [debug] [MainThread]: Connection 'list_f1_db' was left open.
+[0m02:05:27.020537 [debug] [MainThread]: On list_f1_db: Close
+[0m02:05:27.232236 [debug] [MainThread]: Connection 'list_f1_db_raw' was left open.
+[0m02:05:27.233233 [debug] [MainThread]: On list_f1_db_raw: Close
+[0m02:05:27.432382 [debug] [MainThread]: Connection 'model.f1_snowflake_project.my_first_dbt_model' was left open.
+[0m02:05:27.433388 [debug] [MainThread]: On model.f1_snowflake_project.my_first_dbt_model: Close
+[0m02:05:27.635823 [debug] [MainThread]: Connection 'model.f1_snowflake_project.my_second_dbt_model' was left open.
+[0m02:05:27.637826 [debug] [MainThread]: On model.f1_snowflake_project.my_second_dbt_model: Close
+[0m02:05:28.029512 [debug] [MainThread]: Connection 'model.f1_snowflake_project.fct_lapData' was left open.
+[0m02:05:28.031024 [debug] [MainThread]: On model.f1_snowflake_project.fct_lapData: Close
+[0m02:05:28.261613 [info ] [MainThread]: 
+[0m02:05:28.262610 [info ] [MainThread]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 5.60 seconds (5.60s).
+[0m02:05:28.265614 [debug] [MainThread]: Command end result
+[0m02:05:28.296607 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\manifest.json
+[0m02:05:28.299610 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\semantic_manifest.json
+[0m02:05:28.311610 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\run_results.json
+[0m02:05:28.312610 [info ] [MainThread]: 
+[0m02:05:28.312610 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m02:05:28.313611 [info ] [MainThread]: 
+[0m02:05:28.314611 [error] [MainThread]:   Database Error in model fct_lapData (models\example\marts\fct_lapData.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 10 at position 0 unexpected 'team'.
+  compiled code at target\run\f1_snowflake_project\models\example\marts\fct_lapData.sql
+[0m02:05:28.315621 [info ] [MainThread]: 
+[0m02:05:28.315621 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=1 SKIP=0 TOTAL=4
+[0m02:05:28.317621 [debug] [MainThread]: Command `dbt run` failed at 02:05:28.317621 after 7.54 seconds
+[0m02:05:28.318625 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019E7A2C4C40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019E7B121720>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000019E1D88FE20>]}
+[0m02:05:28.318625 [debug] [MainThread]: Flushing usage events
+[0m02:05:29.066986 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m02:05:41.114745 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E31B854C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E31D69D270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E31D69D090>]}
+
+
+============================== 02:05:41.117747 | 22b33bda-850c-45c4-89a7-c89ed8b91cf3 ==============================
+[0m02:05:41.117747 [info ] [MainThread]: Running with dbt=1.9.4
+[0m02:05:41.118749 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'D:\\Personal WorkSpace\\Data Engineering\\Projects\\f1-snowflake-project\\f1_snowflake_project\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\mdamr\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m02:05:41.889219 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '22b33bda-850c-45c4-89a7-c89ed8b91cf3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E33E00A710>]}
+[0m02:05:41.938729 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '22b33bda-850c-45c4-89a7-c89ed8b91cf3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E33E036470>]}
+[0m02:05:41.940929 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m02:05:42.290258 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m02:05:42.519300 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m02:05:42.520300 [debug] [MainThread]: Partial parsing: updated file: f1_snowflake_project://models\example\marts\fct_lapData.sql
+[0m02:05:42.867145 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.f1_snowflake_project.marts
+- models.f1_snowflake_project.staging
+[0m02:05:42.884144 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '22b33bda-850c-45c4-89a7-c89ed8b91cf3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E33E6ED000>]}
+[0m02:05:42.990681 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\manifest.json
+[0m02:05:42.994684 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\semantic_manifest.json
+[0m02:05:43.015736 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '22b33bda-850c-45c4-89a7-c89ed8b91cf3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E33E6EF610>]}
+[0m02:05:43.016736 [info ] [MainThread]: Found 4 models, 4 data tests, 1 source, 476 macros
+[0m02:05:43.016736 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '22b33bda-850c-45c4-89a7-c89ed8b91cf3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E33E6EF6A0>]}
+[0m02:05:43.018737 [info ] [MainThread]: 
+[0m02:05:43.019735 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m02:05:43.019735 [info ] [MainThread]: 
+[0m02:05:43.020735 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m02:05:43.026743 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_f1_db'
+[0m02:05:43.103260 [debug] [ThreadPool]: Using snowflake connection "list_f1_db"
+[0m02:05:43.104260 [debug] [ThreadPool]: On list_f1_db: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db"} */
+show terse schemas in database f1_db
+    limit 10000
+[0m02:05:43.104260 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:05:44.289423 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.185 seconds
+[0m02:05:44.293418 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_f1_db_raw'
+[0m02:05:44.313954 [debug] [ThreadPool]: Using snowflake connection "list_f1_db_raw"
+[0m02:05:44.314955 [debug] [ThreadPool]: On list_f1_db_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db_raw"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m02:05:44.314955 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:05:45.025283 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.710 seconds
+[0m02:05:45.031283 [debug] [ThreadPool]: Using snowflake connection "list_f1_db_raw"
+[0m02:05:45.032283 [debug] [ThreadPool]: On list_f1_db_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db_raw"} */
+show objects in f1_db.raw
+    limit 10000
+    
+;
+[0m02:05:45.200331 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.167 seconds
+[0m02:05:45.203329 [debug] [ThreadPool]: Using snowflake connection "list_f1_db_raw"
+[0m02:05:45.204330 [debug] [ThreadPool]: On list_f1_db_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db_raw"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m02:05:45.404766 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.200 seconds
+[0m02:05:45.409764 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '22b33bda-850c-45c4-89a7-c89ed8b91cf3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E31AFCC550>]}
+[0m02:05:45.416769 [debug] [Thread-1 (]: Began running node model.f1_snowflake_project.my_first_dbt_model
+[0m02:05:45.416769 [debug] [Thread-2 (]: Began running node model.f1_snowflake_project.stg_laps
+[0m02:05:45.417765 [info ] [Thread-1 (]: 1 of 4 START sql table model raw.my_first_dbt_model ............................ [RUN]
+[0m02:05:45.419764 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.f1_snowflake_project.my_first_dbt_model'
+[0m02:05:45.418764 [info ] [Thread-2 (]: 2 of 4 START sql view model raw.stg_laps ....................................... [RUN]
+[0m02:05:45.420763 [debug] [Thread-1 (]: Began compiling node model.f1_snowflake_project.my_first_dbt_model
+[0m02:05:45.420763 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.f1_snowflake_project.stg_laps'
+[0m02:05:45.428772 [debug] [Thread-1 (]: Writing injected SQL for node "model.f1_snowflake_project.my_first_dbt_model"
+[0m02:05:45.428772 [debug] [Thread-2 (]: Began compiling node model.f1_snowflake_project.stg_laps
+[0m02:05:45.431773 [debug] [Thread-2 (]: Writing injected SQL for node "model.f1_snowflake_project.stg_laps"
+[0m02:05:45.432774 [debug] [Thread-2 (]: Began executing node model.f1_snowflake_project.stg_laps
+[0m02:05:45.451288 [debug] [Thread-1 (]: Began executing node model.f1_snowflake_project.my_first_dbt_model
+[0m02:05:45.468289 [debug] [Thread-2 (]: Writing runtime sql for node "model.f1_snowflake_project.stg_laps"
+[0m02:05:45.490286 [debug] [Thread-1 (]: Writing runtime sql for node "model.f1_snowflake_project.my_first_dbt_model"
+[0m02:05:45.492287 [debug] [Thread-1 (]: Using snowflake connection "model.f1_snowflake_project.my_first_dbt_model"
+[0m02:05:45.493287 [debug] [Thread-2 (]: Using snowflake connection "model.f1_snowflake_project.stg_laps"
+[0m02:05:45.493287 [debug] [Thread-1 (]: On model.f1_snowflake_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.my_first_dbt_model"} */
+create or replace transient table f1_db.raw.my_first_dbt_model
+    
+
+    
+    as (/*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    )
+;
+[0m02:05:45.494287 [debug] [Thread-2 (]: On model.f1_snowflake_project.stg_laps: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.stg_laps"} */
+create or replace   view f1_db.raw.stg_laps
+  
+   as (
+    SELECT driver,
+try_to_time(laptime) as laptime,
+lapnumber,
+team,
+position,
+FROM f1_db.raw.laps
+  );
+[0m02:05:45.495288 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m02:05:45.496288 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m02:05:46.364067 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.868 seconds
+[0m02:05:46.391063 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '22b33bda-850c-45c4-89a7-c89ed8b91cf3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E31997E530>]}
+[0m02:05:46.392063 [info ] [Thread-2 (]: 2 of 4 OK created sql view model raw.stg_laps .................................. [[32mSUCCESS 1[0m in 0.97s]
+[0m02:05:46.393064 [debug] [Thread-2 (]: Finished running node model.f1_snowflake_project.stg_laps
+[0m02:05:46.394062 [debug] [Thread-4 (]: Began running node model.f1_snowflake_project.fct_lapData
+[0m02:05:46.394062 [info ] [Thread-4 (]: 3 of 4 START sql view model raw.fct_lapData .................................... [RUN]
+[0m02:05:46.395064 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.f1_snowflake_project.fct_lapData'
+[0m02:05:46.396064 [debug] [Thread-4 (]: Began compiling node model.f1_snowflake_project.fct_lapData
+[0m02:05:46.398062 [debug] [Thread-4 (]: Writing injected SQL for node "model.f1_snowflake_project.fct_lapData"
+[0m02:05:46.399062 [debug] [Thread-4 (]: Began executing node model.f1_snowflake_project.fct_lapData
+[0m02:05:46.402065 [debug] [Thread-4 (]: Writing runtime sql for node "model.f1_snowflake_project.fct_lapData"
+[0m02:05:46.403067 [debug] [Thread-4 (]: Using snowflake connection "model.f1_snowflake_project.fct_lapData"
+[0m02:05:46.404067 [debug] [Thread-4 (]: On model.f1_snowflake_project.fct_lapData: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.fct_lapData"} */
+create or replace   view f1_db.raw.fct_lapData
+  
+   as (
+    SELECT
+driver,
+COUNT(*) AS number_of_laps,
+AVG(laptime) AS average_laptime,
+AVG(position) AS average_position,
+MIN(laptime) as best_lap,
+team
+FROM f1_db.raw.stg_laps
+GROUP BY driver
+  );
+[0m02:05:46.404067 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m02:05:46.951073 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.456 seconds
+[0m02:05:46.957071 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '22b33bda-850c-45c4-89a7-c89ed8b91cf3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E33FE140D0>]}
+[0m02:05:46.958071 [info ] [Thread-1 (]: 1 of 4 OK created sql table model raw.my_first_dbt_model ....................... [[32mSUCCESS 1[0m in 1.54s]
+[0m02:05:46.960069 [debug] [Thread-1 (]: Finished running node model.f1_snowflake_project.my_first_dbt_model
+[0m02:05:46.961069 [debug] [Thread-2 (]: Began running node model.f1_snowflake_project.my_second_dbt_model
+[0m02:05:46.961069 [info ] [Thread-2 (]: 4 of 4 START sql view model raw.my_second_dbt_model ............................ [RUN]
+[0m02:05:46.962068 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.f1_snowflake_project.stg_laps, now model.f1_snowflake_project.my_second_dbt_model)
+[0m02:05:46.963068 [debug] [Thread-2 (]: Began compiling node model.f1_snowflake_project.my_second_dbt_model
+[0m02:05:46.966068 [debug] [Thread-2 (]: Writing injected SQL for node "model.f1_snowflake_project.my_second_dbt_model"
+[0m02:05:46.967068 [debug] [Thread-2 (]: Began executing node model.f1_snowflake_project.my_second_dbt_model
+[0m02:05:46.970068 [debug] [Thread-2 (]: Writing runtime sql for node "model.f1_snowflake_project.my_second_dbt_model"
+[0m02:05:46.972069 [debug] [Thread-2 (]: Using snowflake connection "model.f1_snowflake_project.my_second_dbt_model"
+[0m02:05:46.972069 [debug] [Thread-2 (]: On model.f1_snowflake_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.my_second_dbt_model"} */
+create or replace   view f1_db.raw.my_second_dbt_model
+  
+   as (
+    -- Use the `ref` function to select from other models
+
+select *
+from f1_db.raw.my_first_dbt_model
+where id = 1
+  );
+[0m02:05:47.249065 [debug] [Thread-4 (]: Snowflake adapter: Snowflake query id: 01bc32c9-0304-7b36-0003-67f20003028e
+[0m02:05:47.250065 [debug] [Thread-4 (]: Snowflake adapter: Snowflake error: 001044 (42P13): SQL compilation error: error line 7 at position 0
+Invalid argument types for function 'SUM': (TIME(9))
+[0m02:05:47.251065 [debug] [Thread-4 (]: Database Error in model fct_lapData (models\example\marts\fct_lapData.sql)
+  001044 (42P13): SQL compilation error: error line 7 at position 0
+  Invalid argument types for function 'SUM': (TIME(9))
+  compiled code at target\run\f1_snowflake_project\models\example\marts\fct_lapData.sql
+[0m02:05:47.252065 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '22b33bda-850c-45c4-89a7-c89ed8b91cf3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E33FE6D2A0>]}
+[0m02:05:47.253065 [error] [Thread-4 (]: 3 of 4 ERROR creating sql view model raw.fct_lapData ........................... [[31mERROR[0m in 0.86s]
+[0m02:05:47.254063 [debug] [Thread-4 (]: Finished running node model.f1_snowflake_project.fct_lapData
+[0m02:05:47.254063 [debug] [Thread-7 (]: Marking all children of 'model.f1_snowflake_project.fct_lapData' to be skipped because of status 'error'.  Reason: Database Error in model fct_lapData (models\example\marts\fct_lapData.sql)
+  001044 (42P13): SQL compilation error: error line 7 at position 0
+  Invalid argument types for function 'SUM': (TIME(9))
+  compiled code at target\run\f1_snowflake_project\models\example\marts\fct_lapData.sql.
+[0m02:05:47.365585 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.393 seconds
+[0m02:05:47.371594 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '22b33bda-850c-45c4-89a7-c89ed8b91cf3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E33FE4CC40>]}
+[0m02:05:47.372590 [info ] [Thread-2 (]: 4 of 4 OK created sql view model raw.my_second_dbt_model ....................... [[32mSUCCESS 1[0m in 0.41s]
+[0m02:05:47.373590 [debug] [Thread-2 (]: Finished running node model.f1_snowflake_project.my_second_dbt_model
+[0m02:05:47.376590 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:05:47.377587 [debug] [MainThread]: Connection 'list_f1_db' was left open.
+[0m02:05:47.377587 [debug] [MainThread]: On list_f1_db: Close
+[0m02:05:47.668008 [debug] [MainThread]: Connection 'list_f1_db_raw' was left open.
+[0m02:05:47.669005 [debug] [MainThread]: On list_f1_db_raw: Close
+[0m02:05:48.078811 [debug] [MainThread]: Connection 'model.f1_snowflake_project.my_first_dbt_model' was left open.
+[0m02:05:48.079816 [debug] [MainThread]: On model.f1_snowflake_project.my_first_dbt_model: Close
+[0m02:05:48.285507 [debug] [MainThread]: Connection 'model.f1_snowflake_project.my_second_dbt_model' was left open.
+[0m02:05:48.286512 [debug] [MainThread]: On model.f1_snowflake_project.my_second_dbt_model: Close
+[0m02:05:48.592958 [debug] [MainThread]: Connection 'model.f1_snowflake_project.fct_lapData' was left open.
+[0m02:05:48.593963 [debug] [MainThread]: On model.f1_snowflake_project.fct_lapData: Close
+[0m02:05:48.901548 [info ] [MainThread]: 
+[0m02:05:48.903549 [info ] [MainThread]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 5.88 seconds (5.88s).
+[0m02:05:48.905555 [debug] [MainThread]: Command end result
+[0m02:05:48.938554 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\manifest.json
+[0m02:05:48.941069 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\semantic_manifest.json
+[0m02:05:48.954068 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\run_results.json
+[0m02:05:48.954068 [info ] [MainThread]: 
+[0m02:05:48.955069 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m02:05:48.956069 [info ] [MainThread]: 
+[0m02:05:48.957069 [error] [MainThread]:   Database Error in model fct_lapData (models\example\marts\fct_lapData.sql)
+  001044 (42P13): SQL compilation error: error line 7 at position 0
+  Invalid argument types for function 'SUM': (TIME(9))
+  compiled code at target\run\f1_snowflake_project\models\example\marts\fct_lapData.sql
+[0m02:05:48.958069 [info ] [MainThread]: 
+[0m02:05:48.959067 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=1 SKIP=0 TOTAL=4
+[0m02:05:48.961069 [debug] [MainThread]: Command `dbt run` failed at 02:05:48.961069 after 7.91 seconds
+[0m02:05:48.961069 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E31B854C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E33E037250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E33E5FCC40>]}
+[0m02:05:48.962069 [debug] [MainThread]: Flushing usage events
+[0m02:05:49.956773 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m02:06:33.698863 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C89E74C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C8AD1D270>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C8AD1D090>]}
+
+
+============================== 02:06:33.702863 | 49d14b21-ea44-4a1e-94cd-643611b8e0ac ==============================
+[0m02:06:33.702863 [info ] [MainThread]: Running with dbt=1.9.4
+[0m02:06:33.702863 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\mdamr\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'D:\\Personal WorkSpace\\Data Engineering\\Projects\\f1-snowflake-project\\f1_snowflake_project\\logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m02:06:34.495566 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '49d14b21-ea44-4a1e-94cd-643611b8e0ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022CAB65A710>]}
+[0m02:06:34.545617 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '49d14b21-ea44-4a1e-94cd-643611b8e0ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022CAB686470>]}
+[0m02:06:34.547625 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m02:06:34.885688 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m02:06:35.065718 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m02:06:35.065718 [debug] [MainThread]: Partial parsing: updated file: f1_snowflake_project://models\example\marts\fct_lapData.sql
+[0m02:06:35.353761 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.f1_snowflake_project.marts
+- models.f1_snowflake_project.staging
+[0m02:06:35.366276 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '49d14b21-ea44-4a1e-94cd-643611b8e0ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022CABD39000>]}
+[0m02:06:35.461339 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\manifest.json
+[0m02:06:35.464850 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\semantic_manifest.json
+[0m02:06:35.485527 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '49d14b21-ea44-4a1e-94cd-643611b8e0ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022CABD3B610>]}
+[0m02:06:35.486527 [info ] [MainThread]: Found 4 models, 4 data tests, 1 source, 476 macros
+[0m02:06:35.487526 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '49d14b21-ea44-4a1e-94cd-643611b8e0ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022CABD3B6A0>]}
+[0m02:06:35.489524 [info ] [MainThread]: 
+[0m02:06:35.489524 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m02:06:35.490527 [info ] [MainThread]: 
+[0m02:06:35.491526 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m02:06:35.496527 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_f1_db'
+[0m02:06:35.575045 [debug] [ThreadPool]: Using snowflake connection "list_f1_db"
+[0m02:06:35.576044 [debug] [ThreadPool]: On list_f1_db: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db"} */
+show terse schemas in database f1_db
+    limit 10000
+[0m02:06:35.576044 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:06:36.815983 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.239 seconds
+[0m02:06:36.819982 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_f1_db_raw'
+[0m02:06:36.833982 [debug] [ThreadPool]: Using snowflake connection "list_f1_db_raw"
+[0m02:06:36.833982 [debug] [ThreadPool]: On list_f1_db_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db_raw"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m02:06:36.834982 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:06:37.699596 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.865 seconds
+[0m02:06:37.705601 [debug] [ThreadPool]: Using snowflake connection "list_f1_db_raw"
+[0m02:06:37.706603 [debug] [ThreadPool]: On list_f1_db_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db_raw"} */
+show objects in f1_db.raw
+    limit 10000
+    
+;
+[0m02:06:37.929333 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.222 seconds
+[0m02:06:37.931333 [debug] [ThreadPool]: Using snowflake connection "list_f1_db_raw"
+[0m02:06:37.932333 [debug] [ThreadPool]: On list_f1_db_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db_raw"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m02:06:38.258310 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.325 seconds
+[0m02:06:38.262852 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '49d14b21-ea44-4a1e-94cd-643611b8e0ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C8861C550>]}
+[0m02:06:38.269849 [debug] [Thread-1 (]: Began running node model.f1_snowflake_project.my_first_dbt_model
+[0m02:06:38.269849 [debug] [Thread-2 (]: Began running node model.f1_snowflake_project.stg_laps
+[0m02:06:38.270852 [info ] [Thread-1 (]: 1 of 4 START sql table model raw.my_first_dbt_model ............................ [RUN]
+[0m02:06:38.271850 [info ] [Thread-2 (]: 2 of 4 START sql view model raw.stg_laps ....................................... [RUN]
+[0m02:06:38.272848 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.f1_snowflake_project.my_first_dbt_model'
+[0m02:06:38.273848 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.f1_snowflake_project.stg_laps'
+[0m02:06:38.274849 [debug] [Thread-1 (]: Began compiling node model.f1_snowflake_project.my_first_dbt_model
+[0m02:06:38.274849 [debug] [Thread-2 (]: Began compiling node model.f1_snowflake_project.stg_laps
+[0m02:06:38.281848 [debug] [Thread-1 (]: Writing injected SQL for node "model.f1_snowflake_project.my_first_dbt_model"
+[0m02:06:38.284851 [debug] [Thread-2 (]: Writing injected SQL for node "model.f1_snowflake_project.stg_laps"
+[0m02:06:38.285849 [debug] [Thread-2 (]: Began executing node model.f1_snowflake_project.stg_laps
+[0m02:06:38.318850 [debug] [Thread-2 (]: Writing runtime sql for node "model.f1_snowflake_project.stg_laps"
+[0m02:06:38.319852 [debug] [Thread-1 (]: Began executing node model.f1_snowflake_project.my_first_dbt_model
+[0m02:06:38.347855 [debug] [Thread-1 (]: Writing runtime sql for node "model.f1_snowflake_project.my_first_dbt_model"
+[0m02:06:38.347855 [debug] [Thread-2 (]: Using snowflake connection "model.f1_snowflake_project.stg_laps"
+[0m02:06:38.349856 [debug] [Thread-2 (]: On model.f1_snowflake_project.stg_laps: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.stg_laps"} */
+create or replace   view f1_db.raw.stg_laps
+  
+   as (
+    SELECT driver,
+try_to_time(laptime) as laptime,
+lapnumber,
+team,
+position,
+FROM f1_db.raw.laps
+  );
+[0m02:06:38.350856 [debug] [Thread-1 (]: Using snowflake connection "model.f1_snowflake_project.my_first_dbt_model"
+[0m02:06:38.350856 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m02:06:38.351856 [debug] [Thread-1 (]: On model.f1_snowflake_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.my_first_dbt_model"} */
+create or replace transient table f1_db.raw.my_first_dbt_model
+    
+
+    
+    as (/*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    )
+;
+[0m02:06:38.354857 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m02:06:39.281392 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.930 seconds
+[0m02:06:39.308389 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '49d14b21-ea44-4a1e-94cd-643611b8e0ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C86FCE530>]}
+[0m02:06:39.309390 [info ] [Thread-2 (]: 2 of 4 OK created sql view model raw.stg_laps .................................. [[32mSUCCESS 1[0m in 1.03s]
+[0m02:06:39.310391 [debug] [Thread-2 (]: Finished running node model.f1_snowflake_project.stg_laps
+[0m02:06:39.310391 [debug] [Thread-4 (]: Began running node model.f1_snowflake_project.fct_lapData
+[0m02:06:39.311392 [info ] [Thread-4 (]: 3 of 4 START sql view model raw.fct_lapData .................................... [RUN]
+[0m02:06:39.312389 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.f1_snowflake_project.fct_lapData'
+[0m02:06:39.312389 [debug] [Thread-4 (]: Began compiling node model.f1_snowflake_project.fct_lapData
+[0m02:06:39.316390 [debug] [Thread-4 (]: Writing injected SQL for node "model.f1_snowflake_project.fct_lapData"
+[0m02:06:39.317390 [debug] [Thread-4 (]: Began executing node model.f1_snowflake_project.fct_lapData
+[0m02:06:39.323391 [debug] [Thread-4 (]: Writing runtime sql for node "model.f1_snowflake_project.fct_lapData"
+[0m02:06:39.328391 [debug] [Thread-4 (]: Using snowflake connection "model.f1_snowflake_project.fct_lapData"
+[0m02:06:39.330391 [debug] [Thread-4 (]: On model.f1_snowflake_project.fct_lapData: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.fct_lapData"} */
+create or replace   view f1_db.raw.fct_lapData
+  
+   as (
+    SELECT
+driver,
+COUNT(*) AS number_of_laps,
+AVG(laptime) AS average_laptime,
+AVG(position) AS average_position,
+MIN(laptime) as best_lap,
+FROM f1_db.raw.stg_laps
+GROUP BY driver
+  );
+[0m02:06:39.331389 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m02:06:40.000348 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.645 seconds
+[0m02:06:40.004346 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '49d14b21-ea44-4a1e-94cd-643611b8e0ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022CAD466380>]}
+[0m02:06:40.006349 [info ] [Thread-1 (]: 1 of 4 OK created sql table model raw.my_first_dbt_model ....................... [[32mSUCCESS 1[0m in 1.73s]
+[0m02:06:40.007349 [debug] [Thread-1 (]: Finished running node model.f1_snowflake_project.my_first_dbt_model
+[0m02:06:40.008351 [debug] [Thread-2 (]: Began running node model.f1_snowflake_project.my_second_dbt_model
+[0m02:06:40.009346 [info ] [Thread-2 (]: 4 of 4 START sql view model raw.my_second_dbt_model ............................ [RUN]
+[0m02:06:40.011348 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.f1_snowflake_project.stg_laps, now model.f1_snowflake_project.my_second_dbt_model)
+[0m02:06:40.011348 [debug] [Thread-2 (]: Began compiling node model.f1_snowflake_project.my_second_dbt_model
+[0m02:06:40.015345 [debug] [Thread-2 (]: Writing injected SQL for node "model.f1_snowflake_project.my_second_dbt_model"
+[0m02:06:40.016345 [debug] [Thread-2 (]: Began executing node model.f1_snowflake_project.my_second_dbt_model
+[0m02:06:40.020345 [debug] [Thread-2 (]: Writing runtime sql for node "model.f1_snowflake_project.my_second_dbt_model"
+[0m02:06:40.021345 [debug] [Thread-2 (]: Using snowflake connection "model.f1_snowflake_project.my_second_dbt_model"
+[0m02:06:40.022344 [debug] [Thread-2 (]: On model.f1_snowflake_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.my_second_dbt_model"} */
+create or replace   view f1_db.raw.my_second_dbt_model
+  
+   as (
+    -- Use the `ref` function to select from other models
+
+select *
+from f1_db.raw.my_first_dbt_model
+where id = 1
+  );
+[0m02:06:40.109497 [debug] [Thread-4 (]: Snowflake adapter: Snowflake query id: 01bc32ca-0304-7caa-0003-67f20003227a
+[0m02:06:40.110495 [debug] [Thread-4 (]: Snowflake adapter: Snowflake error: 001044 (42P13): SQL compilation error: error line 7 at position 0
+Invalid argument types for function 'SUM': (TIME(9))
+[0m02:06:40.113499 [debug] [Thread-4 (]: Database Error in model fct_lapData (models\example\marts\fct_lapData.sql)
+  001044 (42P13): SQL compilation error: error line 7 at position 0
+  Invalid argument types for function 'SUM': (TIME(9))
+  compiled code at target\run\f1_snowflake_project\models\example\marts\fct_lapData.sql
+[0m02:06:40.114495 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '49d14b21-ea44-4a1e-94cd-643611b8e0ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022CAD4BFA30>]}
+[0m02:06:40.115494 [error] [Thread-4 (]: 3 of 4 ERROR creating sql view model raw.fct_lapData ........................... [[31mERROR[0m in 0.80s]
+[0m02:06:40.116493 [debug] [Thread-4 (]: Finished running node model.f1_snowflake_project.fct_lapData
+[0m02:06:40.117493 [debug] [Thread-7 (]: Marking all children of 'model.f1_snowflake_project.fct_lapData' to be skipped because of status 'error'.  Reason: Database Error in model fct_lapData (models\example\marts\fct_lapData.sql)
+  001044 (42P13): SQL compilation error: error line 7 at position 0
+  Invalid argument types for function 'SUM': (TIME(9))
+  compiled code at target\run\f1_snowflake_project\models\example\marts\fct_lapData.sql.
+[0m02:06:40.237273 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.214 seconds
+[0m02:06:40.241272 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '49d14b21-ea44-4a1e-94cd-643611b8e0ac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022CAD3F7460>]}
+[0m02:06:40.242273 [info ] [Thread-2 (]: 4 of 4 OK created sql view model raw.my_second_dbt_model ....................... [[32mSUCCESS 1[0m in 0.23s]
+[0m02:06:40.244268 [debug] [Thread-2 (]: Finished running node model.f1_snowflake_project.my_second_dbt_model
+[0m02:06:40.246270 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:06:40.247268 [debug] [MainThread]: Connection 'list_f1_db' was left open.
+[0m02:06:40.247268 [debug] [MainThread]: On list_f1_db: Close
+[0m02:06:40.515124 [debug] [MainThread]: Connection 'list_f1_db_raw' was left open.
+[0m02:06:40.516127 [debug] [MainThread]: On list_f1_db_raw: Close
+[0m02:06:40.722557 [debug] [MainThread]: Connection 'model.f1_snowflake_project.my_first_dbt_model' was left open.
+[0m02:06:40.723561 [debug] [MainThread]: On model.f1_snowflake_project.my_first_dbt_model: Close
+[0m02:06:40.940718 [debug] [MainThread]: Connection 'model.f1_snowflake_project.my_second_dbt_model' was left open.
+[0m02:06:40.941722 [debug] [MainThread]: On model.f1_snowflake_project.my_second_dbt_model: Close
+[0m02:06:41.162123 [debug] [MainThread]: Connection 'model.f1_snowflake_project.fct_lapData' was left open.
+[0m02:06:41.163125 [debug] [MainThread]: On model.f1_snowflake_project.fct_lapData: Close
+[0m02:06:41.441955 [info ] [MainThread]: 
+[0m02:06:41.443957 [info ] [MainThread]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 5.95 seconds (5.95s).
+[0m02:06:41.445957 [debug] [MainThread]: Command end result
+[0m02:06:41.478478 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\manifest.json
+[0m02:06:41.481479 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\semantic_manifest.json
+[0m02:06:41.488479 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\run_results.json
+[0m02:06:41.489479 [info ] [MainThread]: 
+[0m02:06:41.489479 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m02:06:41.490481 [info ] [MainThread]: 
+[0m02:06:41.491480 [error] [MainThread]:   Database Error in model fct_lapData (models\example\marts\fct_lapData.sql)
+  001044 (42P13): SQL compilation error: error line 7 at position 0
+  Invalid argument types for function 'SUM': (TIME(9))
+  compiled code at target\run\f1_snowflake_project\models\example\marts\fct_lapData.sql
+[0m02:06:41.492481 [info ] [MainThread]: 
+[0m02:06:41.493480 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=1 SKIP=0 TOTAL=4
+[0m02:06:41.494479 [debug] [MainThread]: Command `dbt run` failed at 02:06:41.494479 after 7.86 seconds
+[0m02:06:41.494479 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C89E74C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022CAB65A710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022CABC4D540>]}
+[0m02:06:41.495479 [debug] [MainThread]: Flushing usage events
+[0m02:06:42.823659 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m02:19:16.648755 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000203623C4BB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002036324D210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002036324D030>]}
+
+
+============================== 02:19:16.653756 | f7bbd738-f5e3-456f-9707-f7feac43617d ==============================
+[0m02:19:16.653756 [info ] [MainThread]: Running with dbt=1.9.4
+[0m02:19:16.654755 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'D:\\Personal WorkSpace\\Data Engineering\\Projects\\f1-snowflake-project\\f1_snowflake_project\\logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\mdamr\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m02:19:17.561964 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f7bbd738-f5e3-456f-9707-f7feac43617d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002035F726BF0>]}
+[0m02:19:17.613964 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f7bbd738-f5e3-456f-9707-f7feac43617d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020362472B00>]}
+[0m02:19:17.616965 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m02:19:18.029221 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m02:19:18.263782 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m02:19:18.264785 [debug] [MainThread]: Partial parsing: updated file: f1_snowflake_project://models\example\staging\stg_laps.sql
+[0m02:19:18.265782 [debug] [MainThread]: Partial parsing: updated file: f1_snowflake_project://models\example\marts\fct_lapData.sql
+[0m02:19:18.533830 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.f1_snowflake_project.stg_laps' (models\example\staging\stg_laps.sql) depends on a source named 'raw.laps' which was not found
+[0m02:19:18.534833 [debug] [MainThread]: Command `dbt run` failed at 02:19:18.534833 after 1.98 seconds
+[0m02:19:18.535835 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000203623C4BB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002030418A170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002030418A620>]}
+[0m02:19:18.535835 [debug] [MainThread]: Flushing usage events
+[0m02:19:19.504457 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m02:19:41.323410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028283A54B80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002828589D210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002828589D030>]}
+
+
+============================== 02:19:41.327410 | 533027cd-a79f-4902-85cd-913866406176 ==============================
+[0m02:19:41.327410 [info ] [MainThread]: Running with dbt=1.9.4
+[0m02:19:41.328408 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\mdamr\\.dbt', 'log_path': 'D:\\Personal WorkSpace\\Data Engineering\\Projects\\f1-snowflake-project\\f1_snowflake_project\\logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m02:19:42.181807 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '533027cd-a79f-4902-85cd-913866406176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282A62AA500>]}
+[0m02:19:42.234806 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '533027cd-a79f-4902-85cd-913866406176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282A62363E0>]}
+[0m02:19:42.236573 [info ] [MainThread]: Registered adapter: snowflake=1.9.4
+[0m02:19:42.584517 [debug] [MainThread]: checksum: b5597158181700c50f5bc1c71fe28b37a6fb85633dc5323885263678b6bc782c, vars: {}, profile: , target: , version: 1.9.4
+[0m02:19:42.766555 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m02:19:42.767555 [debug] [MainThread]: Partial parsing: updated file: f1_snowflake_project://models\example\marts\fct_lapData.sql
+[0m02:19:42.768556 [debug] [MainThread]: Partial parsing: updated file: f1_snowflake_project://models\example\staging\stg_laps.sql
+[0m02:19:43.067088 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.f1_snowflake_project.staging
+- models.f1_snowflake_project.marts
+[0m02:19:43.084092 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '533027cd-a79f-4902-85cd-913866406176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282A68F4F70>]}
+[0m02:19:43.175608 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\manifest.json
+[0m02:19:43.179611 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\semantic_manifest.json
+[0m02:19:43.200627 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '533027cd-a79f-4902-85cd-913866406176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282A68F4550>]}
+[0m02:19:43.201628 [info ] [MainThread]: Found 4 models, 4 data tests, 1 source, 476 macros
+[0m02:19:43.202628 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '533027cd-a79f-4902-85cd-913866406176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282A681CE50>]}
+[0m02:19:43.203627 [info ] [MainThread]: 
+[0m02:19:43.204627 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m02:19:43.205627 [info ] [MainThread]: 
+[0m02:19:43.206627 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m02:19:43.211629 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_f1_db'
+[0m02:19:43.290406 [debug] [ThreadPool]: Using snowflake connection "list_f1_db"
+[0m02:19:43.290406 [debug] [ThreadPool]: On list_f1_db: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db"} */
+show terse schemas in database f1_db
+    limit 10000
+[0m02:19:43.291407 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:19:44.154461 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 0.863 seconds
+[0m02:19:44.158462 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_f1_db_raw'
+[0m02:19:44.171457 [debug] [ThreadPool]: Using snowflake connection "list_f1_db_raw"
+[0m02:19:44.172457 [debug] [ThreadPool]: On list_f1_db_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db_raw"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m02:19:44.172457 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:19:44.896933 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.724 seconds
+[0m02:19:44.902934 [debug] [ThreadPool]: Using snowflake connection "list_f1_db_raw"
+[0m02:19:44.903944 [debug] [ThreadPool]: On list_f1_db_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db_raw"} */
+show objects in f1_db.raw
+    limit 10000
+    
+;
+[0m02:19:45.103866 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.200 seconds
+[0m02:19:45.106866 [debug] [ThreadPool]: Using snowflake connection "list_f1_db_raw"
+[0m02:19:45.106866 [debug] [ThreadPool]: On list_f1_db_raw: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "connection_name": "list_f1_db_raw"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m02:19:45.308058 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.200 seconds
+[0m02:19:45.312059 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '533027cd-a79f-4902-85cd-913866406176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028281BE6CE0>]}
+[0m02:19:45.318283 [debug] [Thread-1 (]: Began running node model.f1_snowflake_project.my_first_dbt_model
+[0m02:19:45.318283 [debug] [Thread-2 (]: Began running node model.f1_snowflake_project.stg_laps
+[0m02:19:45.319283 [info ] [Thread-1 (]: 1 of 4 START sql table model raw.my_first_dbt_model ............................ [RUN]
+[0m02:19:45.321292 [info ] [Thread-2 (]: 2 of 4 START sql view model raw.stg_laps ....................................... [RUN]
+[0m02:19:45.322282 [debug] [Thread-1 (]: Acquiring new snowflake connection 'model.f1_snowflake_project.my_first_dbt_model'
+[0m02:19:45.322282 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.f1_snowflake_project.stg_laps'
+[0m02:19:45.323283 [debug] [Thread-1 (]: Began compiling node model.f1_snowflake_project.my_first_dbt_model
+[0m02:19:45.324282 [debug] [Thread-2 (]: Began compiling node model.f1_snowflake_project.stg_laps
+[0m02:19:45.331284 [debug] [Thread-1 (]: Writing injected SQL for node "model.f1_snowflake_project.my_first_dbt_model"
+[0m02:19:45.336280 [debug] [Thread-2 (]: Writing injected SQL for node "model.f1_snowflake_project.stg_laps"
+[0m02:19:45.338286 [debug] [Thread-2 (]: Began executing node model.f1_snowflake_project.stg_laps
+[0m02:19:45.339287 [debug] [Thread-1 (]: Began executing node model.f1_snowflake_project.my_first_dbt_model
+[0m02:19:45.364802 [debug] [Thread-2 (]: Writing runtime sql for node "model.f1_snowflake_project.stg_laps"
+[0m02:19:45.385803 [debug] [Thread-1 (]: Writing runtime sql for node "model.f1_snowflake_project.my_first_dbt_model"
+[0m02:19:45.386802 [debug] [Thread-2 (]: Using snowflake connection "model.f1_snowflake_project.stg_laps"
+[0m02:19:45.387799 [debug] [Thread-1 (]: Using snowflake connection "model.f1_snowflake_project.my_first_dbt_model"
+[0m02:19:45.387799 [debug] [Thread-2 (]: On model.f1_snowflake_project.stg_laps: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.stg_laps"} */
+create or replace   view f1_db.raw.stg_laps
+  
+   as (
+    SELECT
+  driver,
+  try_to_time(laptime) as laptime,
+  lapnumber,
+  team,
+  position
+FROM f1_db.raw.laps
+  );
+[0m02:19:45.388802 [debug] [Thread-1 (]: On model.f1_snowflake_project.my_first_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.my_first_dbt_model"} */
+create or replace transient table f1_db.raw.my_first_dbt_model
+    
+
+    
+    as (/*
+    Welcome to your first dbt model!
+    Did you know that you can also configure models directly within SQL files?
+    This will override configurations stated in dbt_project.yml
+
+    Try changing "table" to "view" below
+*/
+
+
+
+with source_data as (
+
+    select 1 as id
+    union all
+    select null as id
+
+)
+
+select *
+from source_data
+
+/*
+    Uncomment the line below to remove records with null `id` values
+*/
+
+-- where id is not null
+    )
+;
+[0m02:19:45.389800 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m02:19:45.389800 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m02:19:46.236821 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.845 seconds
+[0m02:19:46.261629 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '533027cd-a79f-4902-85cd-913866406176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028281B8E4A0>]}
+[0m02:19:46.262630 [info ] [Thread-2 (]: 2 of 4 OK created sql view model raw.stg_laps .................................. [[32mSUCCESS 1[0m in 0.94s]
+[0m02:19:46.263627 [debug] [Thread-2 (]: Finished running node model.f1_snowflake_project.stg_laps
+[0m02:19:46.263627 [debug] [Thread-4 (]: Began running node model.f1_snowflake_project.fct_lapData
+[0m02:19:46.264625 [info ] [Thread-4 (]: 3 of 4 START sql view model raw.fct_lapData .................................... [RUN]
+[0m02:19:46.265626 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.f1_snowflake_project.fct_lapData'
+[0m02:19:46.265626 [debug] [Thread-4 (]: Began compiling node model.f1_snowflake_project.fct_lapData
+[0m02:19:46.268629 [debug] [Thread-4 (]: Writing injected SQL for node "model.f1_snowflake_project.fct_lapData"
+[0m02:19:46.269630 [debug] [Thread-4 (]: Began executing node model.f1_snowflake_project.fct_lapData
+[0m02:19:46.272629 [debug] [Thread-4 (]: Writing runtime sql for node "model.f1_snowflake_project.fct_lapData"
+[0m02:19:46.273628 [debug] [Thread-4 (]: Using snowflake connection "model.f1_snowflake_project.fct_lapData"
+[0m02:19:46.273628 [debug] [Thread-4 (]: On model.f1_snowflake_project.fct_lapData: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.fct_lapData"} */
+create or replace   view f1_db.raw.fct_lapData
+  
+   as (
+    SELECT
+driver,
+COUNT(*) AS number_of_laps,
+AVG(position) AS average_position,
+MIN(laptime) as best_lap,
+FROM f1_db.raw.stg_laps
+GROUP BY driver
+  );
+[0m02:19:46.274628 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m02:19:46.961217 [debug] [Thread-1 (]: SQL status: SUCCESS 1 in 1.571 seconds
+[0m02:19:46.964217 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '533027cd-a79f-4902-85cd-913866406176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282A8018040>]}
+[0m02:19:46.966217 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 0.692 seconds
+[0m02:19:46.970217 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '533027cd-a79f-4902-85cd-913866406176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282A806D3C0>]}
+[0m02:19:46.967217 [info ] [Thread-1 (]: 1 of 4 OK created sql table model raw.my_first_dbt_model ....................... [[32mSUCCESS 1[0m in 1.64s]
+[0m02:19:46.971217 [debug] [Thread-1 (]: Finished running node model.f1_snowflake_project.my_first_dbt_model
+[0m02:19:46.973215 [debug] [Thread-2 (]: Began running node model.f1_snowflake_project.my_second_dbt_model
+[0m02:19:46.971217 [info ] [Thread-4 (]: 3 of 4 OK created sql view model raw.fct_lapData ............................... [[32mSUCCESS 1[0m in 0.70s]
+[0m02:19:46.975217 [debug] [Thread-4 (]: Finished running node model.f1_snowflake_project.fct_lapData
+[0m02:19:46.973215 [info ] [Thread-2 (]: 4 of 4 START sql view model raw.my_second_dbt_model ............................ [RUN]
+[0m02:19:46.977217 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.f1_snowflake_project.stg_laps, now model.f1_snowflake_project.my_second_dbt_model)
+[0m02:19:46.977217 [debug] [Thread-2 (]: Began compiling node model.f1_snowflake_project.my_second_dbt_model
+[0m02:19:46.985215 [debug] [Thread-2 (]: Writing injected SQL for node "model.f1_snowflake_project.my_second_dbt_model"
+[0m02:19:46.988216 [debug] [Thread-2 (]: Began executing node model.f1_snowflake_project.my_second_dbt_model
+[0m02:19:46.994217 [debug] [Thread-2 (]: Writing runtime sql for node "model.f1_snowflake_project.my_second_dbt_model"
+[0m02:19:46.995217 [debug] [Thread-2 (]: Using snowflake connection "model.f1_snowflake_project.my_second_dbt_model"
+[0m02:19:46.996217 [debug] [Thread-2 (]: On model.f1_snowflake_project.my_second_dbt_model: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "f1_snowflake_project", "target_name": "dev", "node_id": "model.f1_snowflake_project.my_second_dbt_model"} */
+create or replace   view f1_db.raw.my_second_dbt_model
+  
+   as (
+    -- Use the `ref` function to select from other models
+
+select *
+from f1_db.raw.my_first_dbt_model
+where id = 1
+  );
+[0m02:19:47.297670 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.301 seconds
+[0m02:19:47.301669 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '533027cd-a79f-4902-85cd-913866406176', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282A7FA7AF0>]}
+[0m02:19:47.302668 [info ] [Thread-2 (]: 4 of 4 OK created sql view model raw.my_second_dbt_model ....................... [[32mSUCCESS 1[0m in 0.33s]
+[0m02:19:47.304676 [debug] [Thread-2 (]: Finished running node model.f1_snowflake_project.my_second_dbt_model
+[0m02:19:47.306673 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:19:47.306673 [debug] [MainThread]: Connection 'list_f1_db' was left open.
+[0m02:19:47.307674 [debug] [MainThread]: On list_f1_db: Close
+[0m02:19:47.937868 [debug] [MainThread]: Connection 'list_f1_db_raw' was left open.
+[0m02:19:47.938866 [debug] [MainThread]: On list_f1_db_raw: Close
+[0m02:19:48.210789 [debug] [MainThread]: Connection 'model.f1_snowflake_project.my_first_dbt_model' was left open.
+[0m02:19:48.211786 [debug] [MainThread]: On model.f1_snowflake_project.my_first_dbt_model: Close
+[0m02:19:48.519197 [debug] [MainThread]: Connection 'model.f1_snowflake_project.my_second_dbt_model' was left open.
+[0m02:19:48.519197 [debug] [MainThread]: On model.f1_snowflake_project.my_second_dbt_model: Close
+[0m02:19:48.724328 [debug] [MainThread]: Connection 'model.f1_snowflake_project.fct_lapData' was left open.
+[0m02:19:48.725332 [debug] [MainThread]: On model.f1_snowflake_project.fct_lapData: Close
+[0m02:19:48.929854 [info ] [MainThread]: 
+[0m02:19:48.930854 [info ] [MainThread]: Finished running 1 table model, 3 view models in 0 hours 0 minutes and 5.72 seconds (5.72s).
+[0m02:19:48.933857 [debug] [MainThread]: Command end result
+[0m02:19:48.966155 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\manifest.json
+[0m02:19:48.969154 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\semantic_manifest.json
+[0m02:19:48.981155 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Personal WorkSpace\Data Engineering\Projects\f1-snowflake-project\f1_snowflake_project\target\run_results.json
+[0m02:19:48.982153 [info ] [MainThread]: 
+[0m02:19:48.984154 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m02:19:48.985154 [info ] [MainThread]: 
+[0m02:19:48.985154 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[0m02:19:48.987157 [debug] [MainThread]: Command `dbt run` succeeded at 02:19:48.986156 after 7.73 seconds
+[0m02:19:48.987157 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028283A54B80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028284ACACE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000282A693BEB0>]}
+[0m02:19:48.988154 [debug] [MainThread]: Flushing usage events
+[0m02:19:49.903964 [debug] [MainThread]: An error was encountered while trying to flush usage events
